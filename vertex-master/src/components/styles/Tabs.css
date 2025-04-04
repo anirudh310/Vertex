@@ -1,0 +1,59 @@
+.tabs-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: black;
+  padding: 10px 20px;
+  margin-left: 300px;
+  width: calc(100% - 300px);
+  overflow-x: auto; /* Horizontal scroll for smaller screens */
+  white-space: nowrap;
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar on IE/Edge */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on Chrome/Safari */
+}
+
+/* Tabs */
+.tab-item {
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.tab-item:hover {
+  color: #00bfff; /* Light blue on hover */
+}
+
+.tab-item:last-child {
+  border-right: none;
+}
+
+.tab-item.active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .tabs-container {
+    justify-content: flex-start;
+    margin-left: 0;
+    width: 100%;
+    padding: 10px 10px;
+    background: #111;
+  }
+
+  .tab-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
